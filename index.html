@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="styles.css">
+  <title>Document</title>
+</head>
+<body>
+  <nav id="navbar">
+    <header>Animation</header>
+    <ul>
+      <a class="nav-link" href="#Bezier_curves" rel="internal">
+        <li>Bezier curves</li>
+      </a>
+      <a class="nav-link" href="#Types_of_Bezier_curves" rel="internal">
+        <li>Types of Bezier curves</li>
+      </a>
+      <a class="nav-link" href="#CSS_animations" rel="internal">
+        <li>CSS animations</li>
+      </a>
+      <a class="nav-link" href="#CSS_transitions" rel="internal">
+        <li>CSS transitions</li>
+      </a>
+      <a class="nav-link" href="#Totals" rel="internal">
+        <li>Totals</li>
+      </a>
+    </ul>
+  </nav>
+  <main id="main-doc">
+    <section class="main-section" id="Bezier_curves">
+      <header>Bezier curves</header>
+      <article>
+        <p>Bezier curves are used in computer graphics for drawing smooth curves, in CSS animations and in many other
+          places.</p>
+        <p>Despite the "smart" name - this is a very simple thing.</p>
+        <li>In principle, you can create animation without knowing the Bezier curves, but it is worth studying this
+          topic once, at least in order to use this wonderful tool in the future.</li>
+        <li>Moreover, in the world of vector graphics and advanced animations without them in any way.</li>
+        </artice>
+    </section>
+    <section class="main-section" id="Types_of_Bezier_curves">
+      <header>Types of Bezier curves</header>
+      <article>
+        <p>The Bezier curve is given by the control points. There may be two, three, four or more. For example:</p>
+        <li>At two points</li>
+        <li>At three points</li>
+        <li>At four points</li>
+        </artice>
+    </section>
+    <section class="main-section" id="CSS_animations">
+      <header>CSS animations</header>
+      <article>
+        <p>All modern browsers, except IE9, support CSS transitions and CSS animations, which allow you to implement
+          animation using CSS without using JavaScript.</p>
+        <p>However, as we will see later, for a finer control of JavaScript animation, it will not be superfluous at
+          all.</p>
+      </article>
+    </section>
+    <section class="main-section" id="CSS_transitions">
+      <header>CSS transitions</header>
+      <article>
+        <p>Idea is simple. We indicate that some property will be animated using special CSS rules. Further, when
+          changing this property, the browser itself will process the animation.</p>
+        <p>For example, CSS, presented below, 3 seconds animates the background-color property.</p>
+        <code>.animated {
+          transition-property: background-color;
+          transition-duration: 3s;
+          }
+        </code>
+        <p>For example, CSS, presented below, 3 seconds animates the background-color property.</p>
+        <code>.animated {
+          transition-property: background-color;
+          transition-duration: 3s;
+          }
+        </code>
+        <p>Now, any change in the background color will be animated for 3 seconds.</p>
+        <p>When you click on this button, its background is animated:</p>
+        <code>
+          &ltbutton id="color"&gtClickMe&lt/button&gt
+          &ltstyle&gt
+          #color {
+          transition-property: background-color;
+          transition-duration: 3s;
+          }
+          &lt/style&gt
+          &ltscript&gt
+          color.onclick = function () {
+          this.style.backgroundColor = 'red';
+          }
+          &lt/script&gt
+        </code>
+        <p>Next, we examine them all, for now just note that the common property transition can list them all, in order:
+          property duration timing-function delay, and also set the animation of several properties at once.
+          For example, when clicking on this button, the color and font size are animated simultaneously:</p>
+        <code>
+          &ltbutton id="growing"&gtКликни меня&lt/button&gt
+
+          &ltstyle&gt
+          #growing {
+          transition: font-size 3s, color 2s;
+          }
+          &lt/style&gt
+
+          &ltscript&gt
+          growing.onclick = function() {
+          this.style.fontSize='36px';
+          this.style.color='red';
+          }
+          &lt/script&gt
+        </code>
+        <p>Possible negative values, while the animation will start from the middle.
+          For example, here's an animation of numbers from 0 to 9. It is performed by changing the margin-left of the
+          element with numbers, like this:</p>
+        <code>
+          #stripe.animate {
+          margin-left: -174px;
+          transition-property: margin-left;
+          transition-duration: 9s;
+          }
+        </code>
+      </article>
+    </section>
+    <section class="main-section" id="Totals">
+      <header>Totals</header>
+      <p>CSS animations allow you to smoothly or slightly change one or more properties. An alternative to them is a
+        smooth change of property values through JavaScript, we will look at the details below. Limitations and
+        advantages of CSS-animations compared to JavaScript:</p>
+      <p>The time function can be given by a Bezier curve or in steps. More complex animations consisting of several
+        curves are implemented by their combination using CSS animations, but JavaScript functions are always more
+        flexible.</p>
+      <p>CSS animations concern only properties, and in JavaScript you can do anything, delete elements, create new
+        ones.</p>
+      <p>No support in IE9-</p>
+      <p>Simple things are done simply.</p>
+
+    </section>
+
+  </main>
+</body>
+
+</html>
